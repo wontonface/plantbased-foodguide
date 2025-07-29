@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Text>hello world</Text>
-      <Flex direction="column" gap="2">
+      <Flex direction="column" gap="3">
         <Button>Button</Button>
         <CategoryFilters />
       </Flex>
