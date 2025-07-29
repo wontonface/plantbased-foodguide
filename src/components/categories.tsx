@@ -1,6 +1,6 @@
 import { Box, CheckboxCards, Text } from "@radix-ui/themes"
 
-enum VeggieCategoryNames {
+enum VeggieCategoryName {
     Cruciferous = "Cruciferous",
     LeafyGreen = "Leafy green",
     Allium = "Allium",
@@ -26,13 +26,13 @@ type VeggieCategory = {
 };
 
 const veggieCategories: VeggieCategory[] = [
-    { name: VeggieCategoryNames.Cruciferous, frequency: Frequency.Daily },
-    { name: VeggieCategoryNames.LeafyGreen, frequency: Frequency.Daily },
-    { name: VeggieCategoryNames.Allium, frequency: Frequency.VeryFrequent },
-    { name: VeggieCategoryNames.HighFiber, frequency: Frequency.Daily },
-    { name: VeggieCategoryNames.HealthyFats, frequency: Frequency.VeryFrequent },
-    { name: VeggieCategoryNames.Starchy, frequency: Frequency.Often },
-    { name: VeggieCategoryNames.Mushrooms, frequency: Frequency.Often }
+    { name: VeggieCategoryName.Cruciferous, frequency: Frequency.Daily },
+    { name: VeggieCategoryName.LeafyGreen, frequency: Frequency.Daily },
+    { name: VeggieCategoryName.Allium, frequency: Frequency.VeryFrequent },
+    { name: VeggieCategoryName.HighFiber, frequency: Frequency.Daily },
+    { name: VeggieCategoryName.HealthyFats, frequency: Frequency.VeryFrequent },
+    { name: VeggieCategoryName.Starchy, frequency: Frequency.Often },
+    { name: VeggieCategoryName.Mushrooms, frequency: Frequency.Often }
 ];
 
 function CategoryFilters() {
