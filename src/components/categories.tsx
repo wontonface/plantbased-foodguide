@@ -1,4 +1,4 @@
-import { Box, CheckboxCards, Text } from "@radix-ui/themes"
+import { Box, CheckboxCards, Flex, Text } from "@radix-ui/themes"
 
 enum VeggieCategoryName {
     Cruciferous = "Cruciferous",
@@ -10,7 +10,6 @@ enum VeggieCategoryName {
     Starchy = "Starchy",
     Mushrooms = "Mushrooms"
 };
-   
 
 enum Frequency {
     Rarely = 1,
@@ -38,8 +37,19 @@ const veggieCategories: VeggieCategory[] = [
 function CategoryFilters() {
 
     return (
-        <Box maxWidth="150px">
-            <Text>Category filters</Text>
+        <Box maxWidth="900px">
+            <CheckboxCards.Root defaultValue={["1"]} columns={{ initial: "1", sm: "4"}}>
+                {veggieCategories.map((category, index) => (
+                    <CheckboxCards.Item key={index} value={index.toString()}>
+                        <Flex direction="column" width="100%">
+                            <Text weight="bold">{category.name}</Text>
+                            <Text>Frequency: {category.frequency}</Text>
+                    </Flex>
+                    </CheckboxCards.Item>
+                ))}
+
+            </CheckboxCards.Root>
+            {/* <Text>Category filters</Text> */}
         </Box>
     )
 }

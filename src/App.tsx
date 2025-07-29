@@ -15,12 +15,7 @@ function App() {
         <Button>Button</Button>
         <CategoryFilters />
       </Flex>
-      
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
+
     </>
   )
 }
