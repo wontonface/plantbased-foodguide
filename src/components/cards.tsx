@@ -1,5 +1,5 @@
 import { Avatar, Box, Card, Flex, Text } from "@radix-ui/themes"
-import { VeggieCategory, VeggieCategoryName, Frequency } from "./categories";
+import { VeggieCategoryName, Frequency } from "./categories";
 
 enum VeggieName {
     Arugula = "Arugula",
@@ -140,7 +140,7 @@ function VeggieCards() {
                         size="3"
                         src="https://unsplash.com/photos/green-broccoli-on-white-background-q7BJL1qZ1Bw"
                         radius="full"
-                        fallback="T"
+                        fallback="K"
                     />
                     <Box>
                         <Text as="div" size="2" weight="bold">
