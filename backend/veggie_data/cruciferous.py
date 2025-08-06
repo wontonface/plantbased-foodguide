@@ -40,6 +40,40 @@ CRUCIFEROUS_DATA = [
 
     create_cruciferous('Cabbage (Red)', {
         'colors': [Color.PURPLE]
-    })
+    }),
+
+    create_cruciferous('Cauliflower', {
+        'colors': [Color.WHITE]
+    }),
+
+    create_cruciferous('Cauliflower (Purple)', {
+        'colors': [Color.PURPLE]
+    }),
+
+    create_cruciferous('Collard Greens'),
+
+    create_cruciferous('Kale'),
+
+    create_cruciferous('Kohlrabi', {
+        'seasons': [Seasons.SPRING, Seasons.FALL]
+    }),
+
+    create_cruciferous('Mustard Greens'),
+
+    create_cruciferous('Napa Cabbage'),
+
+    create_cruciferous('Radishes', {
+        'seasons': [Seasons.SPRING, Seasons.FALL],
+        'colors': [Color.WHITE]
+    }),
+
+    create_cruciferous('Romanesco'),
+
+    create_cruciferous('Turnips', {
+        'colors': [Color.WHITE]
+    }),
+
+    create_cruciferous('Watercress')
+
 
 ]
