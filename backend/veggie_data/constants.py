@@ -2,9 +2,14 @@
 class Category:
     MUSHROOMS = 'Mushrooms'
     CRUCIFEROUS = 'Cruciferous'
-    LEAFY = 'Leafy'
+    LEAFY = 'LeafyGreen'
     ROOT = 'Root'
+    STALK = 'Stalk'
     SQUASH = 'Squash'
+    ALLIUM = 'Allium'
+    LEGUME = 'Legume'
+    NIGHTSHADE = 'Nightshade'
+    
 
 # Frequency
 class Frequency:

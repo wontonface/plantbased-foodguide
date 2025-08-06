@@ -27,6 +27,11 @@ SQUASH_DATA = [
 
     create_squash('Cheese Pumpkin Squash'),
 
+    create_squash('Cucumber', {
+        'seasons': [Seasons.SUMMER],
+        'color': [Color.GREEN]
+    }),
+
     create_squash('Delicata Squash'),
 
     create_squash('Hubbard Squash', {
@@ -49,6 +54,16 @@ SQUASH_DATA = [
 
     create_squash('Turban Squash'),
 
-    create_squash('Winter Squash')
+    create_squash('Winter Squash'),
+
+    create_squash('Yellow Squash', {
+        'seasons': [Seasons.SUMMER],
+        'color': [Color.YELLOW]
+    }),
+
+    create_squash('Zucchini', {
+        'seasons': [Seasons.SUMMER],
+        'color': [Color.GREEN]
+    })
 
 ]
