@@ -5,6 +5,7 @@ import './App.css'
 import { Flex, Text, Button } from "@radix-ui/themes"
 import CategoryFilters from "./components/categories"
 import VeggieCards from './components/cards'
+import VeggieList from './components/veggieList'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,7 +16,7 @@ function App() {
       <Flex direction="column" gap="3">
         <Button>Button</Button>
         <CategoryFilters />
-        <VeggieCards />
+        <VeggieList />
       </Flex>
 
     </>

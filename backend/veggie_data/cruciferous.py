@@ -69,7 +69,7 @@ CRUCIFEROUS_DATA = [
 
     create_cruciferous('Romanesco'),
 
-    create_cruciferous('Turnips', {
+    create_cruciferous('Turnip Leaves', {
         'colors': [Color.WHITE]
     }),
 
