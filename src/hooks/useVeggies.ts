@@ -40,6 +40,13 @@ const isValidColor = (value: string): value is Colors => {
 
 const convertApiResponseToVeggie = (apiVeggie: VeggieApiResponse): Veggie | null => {
     try {
+
+        // Debug logging
+        console.log(`Converting veggie: ${apiVeggie.name}`);
+        console.log('Seasons:', apiVeggie.seasons, 'Type:', typeof apiVeggie.seasons);
+        console.log('Colors:', apiVeggie.colors, 'Type:', typeof apiVeggie.colors);
+
+        // Validation
         if (!isValidCategory(apiVeggie.category)) {
             console.warn(`Invalid category: ${apiVeggie.category} for veggie: ${apiVeggie.name}`);
             return null;
@@ -50,7 +57,10 @@ const convertApiResponseToVeggie = (apiVeggie: VeggieApiResponse): Veggie | null
             return null;
         }
 
-        const validSeasons = apiVeggie.seasons.filter((seasons): seasons is Seasons => {
+        const seasonsArray = Array.isArray(apiVeggie.seasons) ? apiVeggie.seasons : [];
+        const colorsArray = Array.isArray(apiVeggie.colors) ? apiVeggie.colors : [];
+
+        const validSeasons = seasonsArray.filter((seasons): seasons is Seasons => {
             const isValid = isValidSeason(seasons);
             if (!isValid) {
                 console.warn(`Invalid season: ${seasons} for veggie: ${apiVeggie.name}`);
@@ -58,7 +68,7 @@ const convertApiResponseToVeggie = (apiVeggie: VeggieApiResponse): Veggie | null
             return isValid;
         });
         
-        const validColors = apiVeggie.colors.filter((colors): colors is Colors => {
+        const validColors = colorsArray.filter((colors): colors is Colors => {
             const isValid = isValidColor(colors);
             if (!isValid) {
                 console.warn(`Invalid color: ${colors} for veggie: ${apiVeggie.name}`);
@@ -73,8 +83,8 @@ const convertApiResponseToVeggie = (apiVeggie: VeggieApiResponse): Veggie | null
             category: apiVeggie.category as VeggieCategory,
             frequency: apiVeggie.frequency as Frequency,
             seasons: validSeasons,
-            functions: apiVeggie.functions, // Placeholder
-            nutrition: apiVeggie.nutrition, // Placeholder
+            functions: apiVeggie.functions || [], // Placeholder
+            nutrition: apiVeggie.nutrition || [], // Placeholder
             colors: validColors
         };
     } catch (error) {

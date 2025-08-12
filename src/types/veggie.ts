@@ -66,7 +66,7 @@ export interface VeggieApiResponse {
     category: string;
     frequency: string;
     seasons: string[];
-    functions: string[];
-    nutrition: string[];
+    functions?: string[];
+    nutrition?: string[];
     colors: string[];
 }

@@ -24,7 +24,6 @@ function VeggieCard( { veggie }) {
                     </Box>
                 </Flex>
             </Card>
-            <Text>Veggie Cards</Text> 
         </Box>
     )
 }
