@@ -1,5 +1,6 @@
 import { Avatar, Box, Card, Flex, Text } from "@radix-ui/themes"
 import { useVeggies } from '../hooks/useVeggies';
+import { CategoryIcon, SeasonIcon } from "./icons";
 
 
 function VeggieCard( { veggie }) {
@@ -15,11 +16,14 @@ function VeggieCard( { veggie }) {
                         fallback={veggie.name.charAt(0).toUpperCase()}
                     />
                     <Box>
-                        <Text as="div" size="2" weight="bold">
+                        <Text as="div" size="5" weight="bold">
                             {veggie.name}
                         </Text>
-                        <Text as="div" size="2" color="gray">
-                            {veggie.category}
+                        <Text as="div" size="5" color="gray">
+                            <CategoryIcon /> {veggie.category}
+                        </Text>
+                        <Text as="div" size="5" color="gray">
+                            <SeasonIcon /> 
                         </Text>
                     </Box>
                 </Flex>

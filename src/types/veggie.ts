@@ -41,8 +41,8 @@ export interface Veggie {
     category: VeggieCategory;
     frequency: Frequency;
     seasons: Seasons[];
-    functions: string[]; // Placeholder
-    nutrition: string[]; // Placeholder
+    functions?: string[]; // Placeholder
+    nutrition?: string[]; // Placeholder
     colors: Colors[];
 }
 
