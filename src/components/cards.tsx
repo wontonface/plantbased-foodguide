@@ -7,24 +7,42 @@ function VeggieCard( { veggie }) {
 
     return (
         <Box maxWidth="900px">
-            <Card>
-                <Flex gap="3" align="center">
+            <Card size="3">
+                <Flex gap="5" align="start">
+
                     <Avatar
-                        size="3"
+                        size="5"
                         src="https://unsplash.com/photos/green-broccoli-on-white-background-q7BJL1qZ1Bw"
-                        radius="full"
+                        radius="large"
                         fallback={veggie.name.charAt(0).toUpperCase()}
                     />
                     <Box>
-                        <Text as="div" size="5" weight="bold">
-                            {veggie.name}
-                        </Text>
-                        <Text as="div" size="5" color="gray">
-                            <CategoryIcon /> {veggie.category}
-                        </Text>
-                        <Text as="div" size="5" color="gray">
-                            <SeasonIcon /> {veggie.season}
-                        </Text>
+                        {/* Text container */}
+                        <Flex gap="3" direction="column">
+
+                            {/* Name */}
+                            <Text as="div" size="6" weight="bold">
+                                {veggie.name}
+                            </Text>
+
+                            {/* Category */}
+                            <Flex gap="2" align="center">
+                                <CategoryIcon /> 
+                                <Text as="div" size="4" color="gray" trim="both">
+                                {veggie.category}
+                                </Text>
+                            </Flex>
+
+                            {/* Season */}
+                            <Flex gap="2" align="center">
+                                <SeasonIcon /> 
+                                <Text as="div" size="4" color="gray" trim="both">
+                                {veggie.season.join(", ")}
+                                </Text>
+                            </Flex>
+                            
+                        </Flex>
+                        
                     </Box>
                 </Flex>
             </Card>
