@@ -2,7 +2,7 @@
 export enum VeggieCategory {
     ALLIUM = 'Allium',
     CRUCIFEROUS = 'Cruciferous',
-    LEAFYGREENS = 'LeafyGreen',
+    LEAFYGREENS = 'Leafy Green',
     LEGUMES = 'Legume',
     MUSHROOMS = 'Mushrooms',
     NIGHTSHADES = 'Nightshade',
