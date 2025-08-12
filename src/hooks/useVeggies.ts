@@ -43,8 +43,8 @@ const convertApiResponseToVeggie = (apiVeggie: VeggieApiResponse): Veggie | null
 
         // Debug logging
         console.log(`Converting veggie: ${apiVeggie.name}`);
-        console.log('Seasons:', apiVeggie.season, 'Type:', typeof apiVeggie.season);
-        console.log('Colors:', apiVeggie.color, 'Type:', typeof apiVeggie.color);
+        console.log('Season:', apiVeggie.season, 'Type:', typeof apiVeggie.season);
+        console.log('Color:', apiVeggie.color, 'Type:', typeof apiVeggie.color);
 
         // Validation
         if (!isValidCategory(apiVeggie.category)) {
@@ -57,10 +57,10 @@ const convertApiResponseToVeggie = (apiVeggie: VeggieApiResponse): Veggie | null
             return null;
         }
 
-        const seasonsArray = Array.isArray(apiVeggie.season) ? apiVeggie.season : [];
-        const colorsArray = Array.isArray(apiVeggie.colors) ? apiVeggie.colors : [];
+        const seasonArray = Array.isArray(apiVeggie.season) ? apiVeggie.season : [];
+        const colorArray = Array.isArray(apiVeggie.color) ? apiVeggie.color : [];
 
-        const validSeasons = seasonsArray.filter((season): season is Season => {
+        const validSeasons = seasonArray.filter((season): season is Season => {
             const isValid = isValidSeason(season);
             if (!isValid) {
                 console.warn(`Invalid season: ${season} for veggie: ${apiVeggie.name}`);
@@ -68,7 +68,7 @@ const convertApiResponseToVeggie = (apiVeggie: VeggieApiResponse): Veggie | null
             return isValid;
         });
         
-        const validColors = colorsArray.filter((color): color is Color => {
+        const validColors = colorArray.filter((color): color is Color => {
             const isValid = isValidColor(color);
             if (!isValid) {
                 console.warn(`Invalid color: ${color} for veggie: ${apiVeggie.name}`);

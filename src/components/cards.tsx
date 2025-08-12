@@ -1,5 +1,4 @@
 import { Avatar, Box, Card, Flex, Text } from "@radix-ui/themes"
-import { useVeggies } from '../hooks/useVeggies';
 import { CategoryIcon, SeasonIcon } from "./icons";
 
 
