@@ -5,15 +5,15 @@ import type {
     UseVeggiesResult,
     VeggieCategory,
     Frequency,
-    Seasons,
-    Colors
+    Season,
+    Color
 } from '../types/veggie';
 
 import {
     VeggieCategory as CategoryEnum,
     Frequency as FrequencyEnum,
-    Seasons as SeasonsEnum,
-    Colors as ColorsEnum
+    Season as SeasonEnum,
+    Color as ColorEnum
 } from '../types/veggie';
 
 
@@ -30,12 +30,12 @@ const isValidFrequency = (value: string): value is Frequency => {
     return Object.values(FrequencyEnum).includes(value as Frequency);
 };
 
-const isValidSeason = (value: string): value is Seasons => {
-    return Object.values(SeasonsEnum).includes(value as Seasons);
+const isValidSeason = (value: string): value is Season => {
+    return Object.values(SeasonEnum).includes(value as Season);
 };
 
-const isValidColor = (value: string): value is Colors => {
-    return Object.values(ColorsEnum).includes(value as Colors);
+const isValidColor = (value: string): value is Color => {
+    return Object.values(ColorEnum).includes(value as Color);
 };
 
 const convertApiResponseToVeggie = (apiVeggie: VeggieApiResponse): Veggie | null => {
@@ -43,8 +43,8 @@ const convertApiResponseToVeggie = (apiVeggie: VeggieApiResponse): Veggie | null
 
         // Debug logging
         console.log(`Converting veggie: ${apiVeggie.name}`);
-        console.log('Seasons:', apiVeggie.seasons, 'Type:', typeof apiVeggie.seasons);
-        console.log('Colors:', apiVeggie.colors, 'Type:', typeof apiVeggie.colors);
+        console.log('Seasons:', apiVeggie.season, 'Type:', typeof apiVeggie.season);
+        console.log('Colors:', apiVeggie.color, 'Type:', typeof apiVeggie.color);
 
         // Validation
         if (!isValidCategory(apiVeggie.category)) {
@@ -57,21 +57,21 @@ const convertApiResponseToVeggie = (apiVeggie: VeggieApiResponse): Veggie | null
             return null;
         }
 
-        const seasonsArray = Array.isArray(apiVeggie.seasons) ? apiVeggie.seasons : [];
+        const seasonsArray = Array.isArray(apiVeggie.season) ? apiVeggie.season : [];
         const colorsArray = Array.isArray(apiVeggie.colors) ? apiVeggie.colors : [];
 
-        const validSeasons = seasonsArray.filter((seasons): seasons is Seasons => {
-            const isValid = isValidSeason(seasons);
+        const validSeasons = seasonsArray.filter((season): season is Season => {
+            const isValid = isValidSeason(season);
             if (!isValid) {
-                console.warn(`Invalid season: ${seasons} for veggie: ${apiVeggie.name}`);
+                console.warn(`Invalid season: ${season} for veggie: ${apiVeggie.name}`);
             }
             return isValid;
         });
         
-        const validColors = colorsArray.filter((colors): colors is Colors => {
-            const isValid = isValidColor(colors);
+        const validColors = colorsArray.filter((color): color is Color => {
+            const isValid = isValidColor(color);
             if (!isValid) {
-                console.warn(`Invalid color: ${colors} for veggie: ${apiVeggie.name}`);
+                console.warn(`Invalid color: ${color} for veggie: ${apiVeggie.name}`);
             }
             return isValid;
         });
@@ -82,10 +82,10 @@ const convertApiResponseToVeggie = (apiVeggie: VeggieApiResponse): Veggie | null
             name: apiVeggie.name,
             category: apiVeggie.category as VeggieCategory,
             frequency: apiVeggie.frequency as Frequency,
-            seasons: validSeasons,
+            season: validSeasons,
             functions: apiVeggie.functions || [], // Placeholder
             nutrition: apiVeggie.nutrition || [], // Placeholder
-            colors: validColors
+            color: validColors
         };
     } catch (error) {
         console.error(`Error converting veggie ${apiVeggie.name}:`, error);

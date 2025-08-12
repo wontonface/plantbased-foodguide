@@ -16,14 +16,14 @@ export enum Frequency {
     REGULARLY = 'Regularly'
 }
 
-export enum Seasons {
+export enum Season {
     SPRING = 'Spring',
     SUMMER = 'Summer',
     FALL = 'Fall',
     WINTER = 'Winter'
 }
 
-export enum Colors {
+export enum Color {
     WHITE = 'White',
     GREEN = 'Green',
     BROWN = 'Brown',
@@ -40,17 +40,17 @@ export interface Veggie {
     name: string;
     category: VeggieCategory;
     frequency: Frequency;
-    seasons: Seasons[];
+    season: Season[];
     functions?: string[]; // Placeholder
     nutrition?: string[]; // Placeholder
-    colors: Colors[];
+    color: Color[];
 }
 
 
 // Utility types for working with enums
 export type CategoryKey = keyof typeof VeggieCategory;
 export type FrequencyKey = keyof typeof Frequency;
-export type SeasonsKey = keyof typeof Seasons;
+export type SeasonsKey = keyof typeof Season;
 
 // Hook return type
 export interface UseVeggiesResult {
@@ -65,8 +65,8 @@ export interface VeggieApiResponse {
     name: string;
     category: string;
     frequency: string;
-    seasons: string[];
+    season: string[];
     functions?: string[];
     nutrition?: string[];
-    colors: string[];
+    color: string[];
 }

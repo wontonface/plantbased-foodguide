@@ -23,7 +23,7 @@ function VeggieCard( { veggie }) {
                             <CategoryIcon /> {veggie.category}
                         </Text>
                         <Text as="div" size="5" color="gray">
-                            <SeasonIcon /> 
+                            <SeasonIcon /> {veggie.season}
                         </Text>
                     </Box>
                 </Flex>
