@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { filterVeggiesBySeasons } from '../utils/veggieFilters';
 import { useVeggies } from '../hooks/useVeggies';
 import VeggieCard from './cards';
-import { Avatar, Box, Card, Flex, Text } from "@radix-ui/themes"
+import { Box, Flex, Text } from "@radix-ui/themes"
 
 function VeggieList({ selectedSeasons }: { selectedSeasons: string[] }) {
     console.log("VeggieList rendering with selectedSeasons:", selectedSeasons);
