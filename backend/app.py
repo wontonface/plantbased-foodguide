@@ -4,7 +4,12 @@ import sqlite3
 import traceback
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=[
+    "https://plantbased-foodguide.vercel.app",
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "http://localhost:5001"
+])
 
 def get_db_connection():
     conn = sqlite3.connect('veggies.db')

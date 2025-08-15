@@ -17,7 +17,9 @@ import {
 } from '../types/veggie';
 
 
-const API_BASE_URL = 'http://localhost:5001';
+const API_BASE_URL = import.meta.env.PROD 
+    ? 'https://plantbased-foodguide.onrender.com'
+    : 'http://localhost:5001';
 
 
 // Type guards to validate values
