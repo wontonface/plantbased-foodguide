@@ -66,7 +66,16 @@ def get_veggies():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
+    import os
+    
+    # Get port from environment (set by Render) or default to 5001 for local
+    port = int(os.environ.get('PORT', 5001))
+    
+    # 0.0.0.0 for production, 127.0.0.1 for local
+    host = '0.0.0.0' if os.environ.get('PORT') else '127.0.0.1'
+    
     print("Starting Flask server...")
-    print("API will be available at: http://localhost:5001")
-    print("Test the API at: http://localhost:5001/api/veggies")
-    app.run(debug=True, host='127.0.0.1', port=5001)
+    print(f"API will be available at: http://{host}:{port}")
+    print(f"Test the API at: http://{host}:{port}/api/veggies")
+    
+    app.run(debug=False, host=host, port=port)
