@@ -13,6 +13,7 @@ function SeasonFilters({ selectedSeasons, onSelectionChange}: {
                 value={selectedSeasons}
                 onValueChange={onSelectionChange} 
                 columns={{ initial: "1", sm: "4"}}
+                size="3"
             >
                 {Object.values(Season).map((seasonValue) => (
                     <CheckboxCards.Item key={seasonValue} value={seasonValue}>
