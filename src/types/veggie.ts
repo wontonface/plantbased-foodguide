@@ -1,38 +1,46 @@
 // Enums matching constants.py
-export enum VeggieCategory {
-    ALLIUM = 'Allium',
-    CRUCIFEROUS = 'Cruciferous',
-    LEAFYGREENS = 'Leafy Green',
-    LEGUMES = 'Legume',
-    MUSHROOMS = 'Mushrooms',
-    NIGHTSHADES = 'Nightshade',
-    ROOTS = 'Roots',
-    STALKS = 'Stalks',
-    SQUASH = 'Squash'
-}
+export const VeggieCategory = {
+    ALLIUM: 'Allium',
+    CRUCIFEROUS: 'Cruciferous',
+    LEAFYGREENS: 'Leafy Green',
+    LEGUMES: 'Legume',
+    MUSHROOMS: 'Mushrooms',
+    NIGHTSHADES: 'Nightshade',
+    ROOTS: 'Roots',
+    STALKS: 'Stalks',
+    SQUASH: 'Squash'
+} as const;
 
-export enum Frequency {
-    VERY_FREQUENTLY = 'VeryFrequently',
-    REGULARLY = 'Regularly'
-}
+export type VeggieCategory = typeof VeggieCategory[keyof typeof VeggieCategory];
 
-export enum Season {
-    SPRING = 'Spring',
-    SUMMER = 'Summer',
-    FALL = 'Fall',
-    WINTER = 'Winter'
-}
+export const Frequency = {
+    VERY_FREQUENTLY: 'VeryFrequently',
+    REGULARLY: 'Regularly'
+} as const;
 
-export enum Color {
-    WHITE = 'White',
-    GREEN = 'Green',
-    BROWN = 'Brown',
-    RED = 'Red',
-    ORANGE = 'Orange',
-    YELLOW = 'Yellow',
-    PURPLE = 'Purple',
-    BLUE = 'Blue'
-}
+export type Frequency = typeof Frequency[keyof typeof Frequency];
+
+export const Season = {
+    SPRING: 'Spring',
+    SUMMER: 'Summer',
+    FALL: 'Fall',
+    WINTER: 'Winter'
+} as const;
+
+export type Season = typeof Season[keyof typeof Season];
+
+export const Color = {
+    WHITE: 'White',
+    GREEN: 'Green',
+    BROWN: 'Brown',
+    RED: 'Red',
+    ORANGE: 'Orange',
+    YELLOW: 'Yellow',
+    PURPLE: 'Purple',
+    BLUE: 'Blue'
+} as const;
+
+export type Color = typeof Color[keyof typeof Color];
 
 // TODO: Functions, nutrition
 
