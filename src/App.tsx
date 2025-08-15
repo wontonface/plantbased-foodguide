@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import { Flex, Heading, Button } from "@radix-ui/themes"
 import CategoryFilters from "./components/categories"
@@ -10,7 +9,6 @@ function App() {
     <>
       <Heading>Plant-Based Food Guide</Heading>
       <Flex direction="column" gap="3">
-        <Button>Button</Button>
         <CategoryFilters />
         <VeggieList />
       </Flex>
